@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" role="img" aria-labelledby="title desc">
+  <title id="title">Audio transcription tools comparison</title>
+  <desc id="desc">Illustrative comparison scores for transcription quality, meeting-note quality, agent programmability, cost flexibility, and private deployment.</desc>
+  <rect width="1120" height="720" fill="#f7f5ef"/>
+  <rect x="48" y="44" width="1024" height="632" rx="12" fill="#ffffff" stroke="#d8ddd1"/>
+  <text x="80" y="92" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#15391d">语音转写工具能力对比（示意）</text>
+  <text x="80" y="122" font-family="Arial, sans-serif" font-size="15" fill="#556055">分数为项目宣传示意，不代表官方或严谨 benchmark；真实发布建议替换为自测数据。</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#334033">
+    <text x="80" y="170">Audio-Transcribe-LLM</text>
+    <text x="80" y="240">通义听悟</text>
+    <text x="80" y="310">讯飞听见</text>
+    <text x="80" y="380">飞书妙记</text>
+    <text x="80" y="450">WPS听记</text>
+    <text x="80" y="520">Whisper</text>
+    <text x="80" y="590">FunASR</text>
+  </g>
+  <g transform="translate(240,140)">
+    <g stroke="#e7ebdf" stroke-width="1">
+      <line x1="0" y1="0" x2="0" y2="490"/>
+      <line x1="160" y1="0" x2="160" y2="490"/>
+      <line x1="320" y1="0" x2="320" y2="490"/>
+      <line x1="480" y1="0" x2="480" y2="490"/>
+      <line x1="640" y1="0" x2="640" y2="490"/>
+      <line x1="800" y1="0" x2="800" y2="490"/>
+    </g>
+    <g font-family="Arial, sans-serif" font-size="11" fill="#697369">
+      <text x="-6" y="515">0</text>
+      <text x="150" y="515">20</text>
+      <text x="310" y="515">40</text>
+      <text x="470" y="515">60</text>
+      <text x="630" y="515">80</text>
+      <text x="790" y="515">100</text>
+    </g>
+    <g>
+      <rect x="0" y="10" width="768" height="12" fill="#4f8b61"/>
+      <rect x="0" y="25" width="736" height="12" fill="#c08a36"/>
+      <rect x="0" y="40" width="768" height="12" fill="#4d76b8"/>
+      <rect x="0" y="55" width="752" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="70" width="560" height="12" fill="#6a9a9a"/>
+
+      <rect x="0" y="80" width="704" height="12" fill="#4f8b61"/>
+      <rect x="0" y="95" width="720" height="12" fill="#c08a36"/>
+      <rect x="0" y="110" width="440" height="12" fill="#4d76b8"/>
+      <rect x="0" y="125" width="600" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="140" width="360" height="12" fill="#6a9a9a"/>
+
+      <rect x="0" y="150" width="736" height="12" fill="#4f8b61"/>
+      <rect x="0" y="165" width="688" height="12" fill="#c08a36"/>
+      <rect x="0" y="180" width="400" height="12" fill="#4d76b8"/>
+      <rect x="0" y="195" width="560" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="210" width="520" height="12" fill="#6a9a9a"/>
+
+      <rect x="0" y="220" width="704" height="12" fill="#4f8b61"/>
+      <rect x="0" y="235" width="704" height="12" fill="#c08a36"/>
+      <rect x="0" y="250" width="496" height="12" fill="#4d76b8"/>
+      <rect x="0" y="265" width="576" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="280" width="440" height="12" fill="#6a9a9a"/>
+
+      <rect x="0" y="290" width="656" height="12" fill="#4f8b61"/>
+      <rect x="0" y="305" width="656" height="12" fill="#c08a36"/>
+      <rect x="0" y="320" width="360" height="12" fill="#4d76b8"/>
+      <rect x="0" y="335" width="624" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="350" width="320" height="12" fill="#6a9a9a"/>
+
+      <rect x="0" y="360" width="656" height="12" fill="#4f8b61"/>
+      <rect x="0" y="375" width="280" height="12" fill="#c08a36"/>
+      <rect x="0" y="390" width="680" height="12" fill="#4d76b8"/>
+      <rect x="0" y="405" width="640" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="420" width="760" height="12" fill="#6a9a9a"/>
+
+      <rect x="0" y="430" width="688" height="12" fill="#4f8b61"/>
+      <rect x="0" y="445" width="280" height="12" fill="#c08a36"/>
+      <rect x="0" y="460" width="656" height="12" fill="#4d76b8"/>
+      <rect x="0" y="475" width="656" height="12" fill="#8a6ac8"/>
+      <rect x="0" y="490" width="760" height="12" fill="#6a9a9a"/>
+    </g>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#334033">
+    <rect x="80" y="632" width="14" height="14" fill="#4f8b61"/><text x="100" y="644">转写质量</text>
+    <rect x="188" y="632" width="14" height="14" fill="#c08a36"/><text x="208" y="644">纪要质量</text>
+    <rect x="296" y="632" width="14" height="14" fill="#4d76b8"/><text x="316" y="644">可编排性</text>
+    <rect x="412" y="632" width="14" height="14" fill="#8a6ac8"/><text x="432" y="644">成本弹性</text>
+    <rect x="528" y="632" width="14" height="14" fill="#6a9a9a"/><text x="548" y="644">私有化</text>
+  </g>
+</svg>

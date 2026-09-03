@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audio-transcribe-llm"
+version = "0.1.0b1"
+description = "Agent-friendly audio transcription MCP server and Skill templates powered by Doubao Seed 2.0 and OpenAI-compatible text models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Saltyu" }
+]
+keywords = ["mcp", "audio", "transcription", "doubao", "volcengine", "deepseek", "claude-code", "codex"]
+dependencies = [
+  "httpx>=0.27.0",
+  "mcp>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+audio-transcribe-llm = "audio_transcribe_llm.cli:main"
+audio-transcribe-llm-mcp = "audio_transcribe_llm.mcp_server:main"
+
+[tool.setuptools]
+packages = ["audio_transcribe_llm"]
+
