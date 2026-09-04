@@ -1,5 +1,9 @@
 # Audio-Transcribe-LLM
 
+**简体中文** | [English](./README.en.md)
+
+![Audio-Transcribe-LLM 产品总览](docs/assets/images/zh-01-product-hero.png)
+
 面向 Agent 的长音频转写工具：用 Doubao Seed 2.0 Lite/Mini 做音频理解，用 DeepSeek V4 Pro 或任意 OpenAI-compatible 文本模型做校对、摘要和报告整理。
 
 > 项目展示名统一为 **Audio-Transcribe-LLM**。为了保证复制命令可用，GitHub 仓库名、Python 包名和 CLI 命令仍使用小写 slug：`audio-transcribe-llm`。
@@ -16,6 +20,32 @@
 - 想把会议、访谈、课程、播客等长音频交给本地 Agent 处理的人。
 - 想低成本使用火山方舟等云端模型额度的人。
 - 想保留自己的 Agent 工作流，而不是把音频上传到固定会议纪要 SaaS 的人。
+
+## 对标产品
+
+- **讯飞听见**（[官网](https://www.iflyrec.com/)）：科大讯飞旗下的录音转文字与会议纪要 SaaS，支持 App/网页录音、导入音视频转写、说话人分离、翻译和云存储，并提供收费的人工精转服务。计费：机器快转 **0.33 元/分钟**（约 19.8 元/小时），人工精转中文 **2.17 元/分钟**起；原会员制已下线，现为按量付费 + 充值套餐（如畅享包每月 6,000 分钟转写时长，App 内年费约 518 元）。
+- **飞书妙记**（[官网](https://www.feishu.cn/product/minutes)）：飞书生态内的音视频转文字与智能会议纪要工具，支持会议、录音、视频转文字，输出说话人识别、AI 摘要、待办提取、多语言翻译和思维导图。计费：免费体验版每月 **300 分钟**转写额度；**AI 会员 69 元/月起**，含每月 3,000 分钟；**AI 会员 Plus 138 元/月起**，含每月 6,000 分钟；商业标准版 50 元/人/月起，妙记转写不限时长。
+
+**本项目**：在语音转文字性能更优的基础上，额外提供——
+
+| 能力                    | 讯飞听见 |  飞书妙记  |              本项目              |
+| ----------------------- | :------: | :--------: | :------------------------------: |
+| 长音频转写 + 说话人分离 |    ✅    |     ✅     |                ✅                |
+| 环境音分析              |    ❌    |     ❌     |                ✅                |
+| 说话人情绪分析          |    ❌    |     ❌     |                ✅                |
+| 接入自己的工作流        |    ❌    | 限飞书生态 | ✅ 任意 MCP/Skill Agent 一键接入 |
+
+### 使用成本
+
+以 seed2.0lite 为例，**半小时语音约消耗：输入 ≤2 万 token、输出 ≤10 万 token，费用约 0.3 元**；换用 seed2.0mini 约为 **0.15 元**，折合每小时 0.3～0.6 元，远低于按分钟计费的商业转写服务。
+
+搭配[字节跳动火山方舟协作奖励计划](https://www.volcengine.com/docs/82379/1391869)，基于每日发放的免费 token，可以实现**转写侧零成本**。
+
+![主流转写服务价格对比](docs/assets/images/zh-07-competitor-prices.png)
+
+> 图中价格为 2026-09 整理的公开信息快照，各竞品套餐与额度可能随官方调整，请以各官方页面为准。
+
+> 2026-09-04 更新：字节跳动已在该活动下架 seed 2.0 lite / 2.0 mini 模型，上述免费方式暂时不可用，恢复时间以官方公告为准。
 
 ## 快速开始
 
@@ -106,10 +136,10 @@ audio-transcribe-llm --env .env transcribe "D:/audio/meeting.mp3"
 
 仓库自带两个可立即试用的公开授权音频：
 
-| 文件 | 语言 | 时长 | 用途 |
-| --- | --- | ---: | --- |
+| 文件                                          | 语言       |     时长 | 用途                   |
+| --------------------------------------------- | ---------- | -------: | ---------------------- |
 | `examples/audio/sample_zh_mandarin_cc0.ogg` | 中文普通话 | 约 30 秒 | 首次安装后测试中文转写 |
-| `examples/audio/sample_en_librivox_pd.mp3` | 英文 | 约 52 秒 | 首次安装后测试英文转写 |
+| `examples/audio/sample_en_librivox_pd.mp3`  | 英文       | 约 52 秒 | 首次安装后测试英文转写 |
 
 ```bash
 audio-transcribe-llm --env .env report "examples/audio/sample_zh_mandarin_cc0.ogg" --no-pdf
@@ -118,7 +148,9 @@ audio-transcribe-llm --env .env report "examples/audio/sample_en_librivox_pd.mp3
 
 ## 输出内容
 
-默认生成：
+![转写报告输出示意](docs/assets/images/zh-04-reports.png)
+
+一次任务默认生成：
 
 ```text
 转写结果_meeting/
@@ -135,6 +167,10 @@ audio-transcribe-llm --env .env report "examples/audio/sample_en_librivox_pd.mp3
 - PDF/HTML：便于分享、归档和打印。
 
 ## Agent 接入
+
+整体链路是「音频输入 → Doubao 音频理解（转写/环境音/情绪）→ 文本模型校对与摘要 → 结构化报告」，Agent 通过 MCP server 调用全流程：
+
+![Agent 工作流](docs/assets/images/zh-02-agent-workflow.png)
 
 安装脚本会生成：
 
